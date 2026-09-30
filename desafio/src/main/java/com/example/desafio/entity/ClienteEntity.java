@@ -24,5 +24,5 @@ public class ClienteEntity {
     private String telefone;
 
     @Column(nullable = false)
-    private String enderoco;
+    private String endereco;
 }

@@ -38,7 +38,7 @@ public class ClienteController {
                 .body(Map.of("mensagem", "Cliente atualizado com sucesso"));
     }
 
-    @DeleteMapping
+    @DeleteMapping("/{id}")
     public ResponseEntity<Map<String, String>> excluir(@PathVariable Long id){
         service.excluirCliente(id);
         return ResponseEntity
