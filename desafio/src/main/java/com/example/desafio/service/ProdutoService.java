@@ -20,9 +20,9 @@ public class ProdutoService {
 
     //CREATE
     public  ProdutoEntity salvarProduto(ProdutoEntity produto){
-        if (produto.getDescricao() != null && repository.existsById(produto.getId())){
+        if (repository.findByDescricao(produto.getDescricao()).isPresent())
             throw new IllegalArgumentException("Produto já cadastrado");
-        }
+
         return repository.save(produto);
 
     }
